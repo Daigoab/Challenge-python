@@ -46,10 +46,10 @@ class InventoryManagement:
                 writer.writerow([item.name, item.quantity, item.price])
 
 def main():
-    inventory_manager = InventoryManagement()
+    inventory_manager = InventoryManagement("inventory/inventory.csv")
 
     # Load initial inventory from file
-    inventory_manager.load_inventory("inventory.csv")
+    inventory_manager.load_inventory("inventory/inventory.csv")
 
     # User menu
     while True:
@@ -95,7 +95,7 @@ def main():
 
         elif choice == "6":
             # Save inventory to file before exiting
-            inventory_manager.save_inventory("inventory.csv")
+            inventory_manager.save_inventory("inventory/inventory.csv")
             print("Exiting program")
             break
 

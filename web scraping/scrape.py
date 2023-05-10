@@ -23,3 +23,13 @@ with (open("header.csv", "w")) as file:
     writer.writerow(["Headings"])
     for heading in headings:
         writer.writerow([heading.text])
+
+summarys = soup.findAll("h2", class_ = "blog-article-card-brief css-ko0c54")
+
+with (open("summary.csv.csv", "w")) as file:
+    writer = csv.writer(file)
+    writer.writerow(["Summarys"])
+    for summary in summarys: 
+        writer.writerow([summary.text])
+
+
